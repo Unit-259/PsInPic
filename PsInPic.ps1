@@ -78,4 +78,4 @@ function Invoke-PixelScript {
 }
 
 # Example Usage
-# $payload = Invoke-PixelScript -Script "C:\Users\micha\Desktop\calc.ps1" -Image "C:\Users\micha\Desktop\notSecret.png" -Out "$env:userprofile\downloads\out.png" -ExecPath "$env:userprofile\downloads\out.png"
+# $payload = Invoke-PixelScript -Script "C:\Users\User\Desktop\calc.ps1" -Image "C:\Users\User\Desktop\notSecret.png" -Out "$env:userprofile\downloads\out.png" -ExecPath "$env:userprofile\downloads\out.png"
