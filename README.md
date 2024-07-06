@@ -10,7 +10,7 @@ Invoke-PixelScript is a PowerShell module designed to embed PowerShell scripts w
 
 ## Prerequisites
 
-Before you begin using Invoke-PixelScript, ensure you have PowerShell installed on your system. This module also requires the .NET System.Drawing assembly, typically available by default in Windows environments.
+Before you begin using Invoke-PixelScript, ensure you have PowerShell installed on your system. This module also requires the .NET System.Drawing assembly, typically available by default in Windows environments. 
 
 ## Installation
 
@@ -50,6 +50,27 @@ After embedding, the function returns a PowerShell one-liner that you can use to
 ```powershell
 # Execute the embedded script from the image
 Invoke-Expression $payload
+```
+
+### EXAMPLE
+
+If you right click and save this image to your downloads folder and then run that powershell code below it you will open the calculator
+(smaller the image the faster it is)
+
+<img src="https://github.com/Unit-259/PsInPic/blob/main/out.png" width="400" alt="Description of Image">
+
+```powershell
+sal a New-Object;Add-Type -A System.Drawing;
+$g=a System.Drawing.Bitmap("$env:userprofile\downloads\out.png");
+$o=a Byte[] 7001382;
+(0..2821)|%{
+foreach($x in 0..2480) {
+$p=$g.GetPixel($x, $_);
+$o[$_*2481+$x]=[math]::Floor(($p.R -band 0x0F)*16) + ($p.G -band 0x0F);
+}
+};
+$g.Dispose();
+IEX([System.Text.Encoding]::ASCII.GetString($o[0..3]))
 ```
 
 ## Contributing
