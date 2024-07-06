@@ -1,6 +1,8 @@
 
 # Invoke-PixelScript
 
+based on original work by: [Invoke-PsImage](https://github.com/peewpw/Invoke-PSImage)
+
 Invoke-PixelScript is a PowerShell module designed to embed PowerShell scripts within the pixels of an image file (PNG). This module provides a way to execute hidden scripts from these images, effectively using steganography to conceal and transport PowerShell scripts.
 
 ## Features
@@ -54,7 +56,7 @@ Invoke-Expression $payload
 
 ### EXAMPLE
 
-If you right click and save this image to your downloads folder and then run that powershell code below it you will open the calculator
+If you right click and save this image to your downloads folder as `out.png` and then run that powershell code below it you will open the calculator
 (smaller the image the faster it is)
 
 <img src="https://github.com/Unit-259/PsInPic/blob/main/out.png" width="400" alt="Description of Image">
